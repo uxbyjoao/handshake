@@ -58,7 +58,8 @@ p {
 ul.social {
   color: $brand-silver;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-content: center;
   width: 100%;
   list-style: none;
   margin: 0;

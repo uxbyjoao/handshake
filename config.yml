@@ -1,43 +1,38 @@
 # CONFIGURATION FILE
 
 # This file is used to pass information down to the build process and
-# templating engine. 
+# templating engine.
 
 # PERSONAL & CONTACT INFORMATION
 
 # This will go on the site's title and metadata. Provide your name,
 # job title and a short description. All fields are required.
 
-userInfo:
-  name: João Gomes
-  title: UX/UI Designer & Front-End Developer
-  description: UX/UI Designer & Front-End Developer based in Fortaleza, Brazil.
+templateLocals:
+  name: Handshake
+  title: A minimalist one-page generator for freelancers.
+  description: A minimalist one-page generator for freelancers.
+  text:
+    heading: Generate a one-page hub in minutes.
+    body: This is **Handshake**, crafted to be a quick solution for redirecting your clients/contacts to your other content & social media. It's super easy to set up, built with GitHub Pages in mind, features 3 gorgeous themes and icons from FontAwesome. Oh, and this body of text even supports Markdown. Created by [João "Belve" Gomes](http://www.twitter.com/joaobelve) for [his own personal website](http://joaobelve.github.io).
+  icons:
+    - id: github
+      url: https://www.github.com/joaobelve/handshake
+      title: Fork it on GitHub
+    - id: twitter
+      url: https://twitter.com/joaobelve
+      title: Tweet @joaobelve
 
 # Up next, you may list contact information so page viewers can get in touch.
 # These will be rendered as small icons visible on the bottom of the page.
 
 # Every item is required to have the following keys: `icon` and `url`.
 # Optionally, you can provide a `title` item which will be thrown in the `title`
-# attribute inside the `<a>` tag. The `icon` key should follow FontAwesome's
-# naming scheme for icons, excluding the `fa-` part (example: for displaying
-# a Medium icon, you would use a `fa-icon` class, so you can just type `medium`
-# and we throw in the `fa-` prefix for you). You can search for icons' names at
-# FontAwesome's website: http://fontawesome.io/icons/.
-
-userContacts:
-  - icon: medium
-    url: https://medium.com/@joaobelve
-    title: Medium
-  - icon: behance
-    url:
-    title: Behance
-  - icon: twitter
-    url: http://www.twitter.com/joaobelve
-    title: Twitter
-  - icon: github
-    url: http://www.github.com/joaobelve
-    title: GitHub
-  - icon: envelope
+# attribute inside the `<a>` tag when rendering. The `icon` key should follow
+# FontAwesome's naming scheme for icons, excluding the `fa-` part (example:
+# for displaying a Medium icon, you would use a `fa-icon` class, so you can
+# just type `medium` and we throw in the `fa-` prefix for you). You can search
+# for icons' names at FontAwesome's website: http://fontawesome.io/icons/.
 
 # SITE BODY
 
@@ -46,22 +41,17 @@ userContacts:
 # can use HTML for links and markup formatting (example: `<strong>` or `<em>`),
 # but not images. Image tags will not be displayed and will be ignored.
 
-siteContent:
-  heading: I design and build digital products.
-  body: Hello, fellow human! My name is **João Gomes**, and I'm a **UX/UI Designer &amp; Front-End Developer** based in Fortaleza, Brazil. You're welcome to (view my portfolio)[#], or give me a shout-out via (Twitter)[http://www.twitter.com/joaobelve]. It'd be my pleasure to buy you a cup of coffee while we discuss your next project.
-
 # OTHER CONFIGURATIONS
 
 # We provide you with 3 color themes you can choose! Try them all: `sky`,
 # `forest` and `coalmine`. You can configure that here. If nothing is provided,
 # `sky` will be default.
 
-siteConfig:
-  theme: sky
+theme: sky
 
 # By default, we will build your site on the root folder of the project,
 # as this is a requirement for the page to function on GitHub Pages (for more
 # information on this, please visit https://pages.github.com/). You can specify
 # a different destination target folder here if you wish.
 
-  distFolder: /
+distFolder: /

@@ -2,35 +2,48 @@ const gulp        = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass        = require('gulp-sass');
 const yaml        = require('js-yaml');
+const pug         = require('gulp-pug');
+const markdown    = require('marked');
 const fs          = require('fs');
 
-// parse config.yml and attatch it to `siteConfig`
-const siteConfig = yaml.safeLoad(fs.readFileSync('src/config.yml'));
+var siteConfig;
 
-console.log(siteConfig);
+// this will read a .yml file, parse it to JSON and attach it to `siteConfig`
+function readSiteConfig(filename) {
+   siteConfig = yaml.safeLoad(fs.readFileSync(filename))
+}
 
-// process html
-gulp.task('html', () => {
-  return gulp.src('src/index.html')
+gulp.task('read-config', () => {
+  readSiteConfig('config.yml');
+});
+
+gulp.task('pug', () => {
+
+  // manually parse `siteConfig.templateLocals.text.body`, because Pug doesn't
+  // support dynamic content when using filters... bummer
+
+  siteConfig.templateLocals.text.body = markdown(siteConfig.templateLocals.text.body);
+
+  return gulp.src('src/index.pug')
+   .pipe(pug({
+     locals: siteConfig.templateLocals
+   }))
    .pipe(gulp.dest('./'));
 });
 
-// process js
 gulp.task('scripts', () => {
   return gulp.src('src/scripts/app.js')
     .pipe(gulp.dest('./js'));
 });
 
-// compile sass
-gulp.task('sass', () => {
+gulp.task('sass', ['read-config'], () => {
   return gulp.src('src/styles/index.scss')
     .pipe(sass({ includePaths: ['node_modules'] }))
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream());
 });
 
-// start server and watch for changes
-gulp.task('serve', ['html', 'scripts', 'sass'], () => {
+gulp.task('serve', ['read-config', 'pug', 'scripts', 'sass'], () => {
   browserSync.init({
     server: {
       baseDir: './'
@@ -39,7 +52,8 @@ gulp.task('serve', ['html', 'scripts', 'sass'], () => {
 
   gulp.watch('src/styles/*.scss', ['sass']);
   gulp.watch('src/js/app.js', ['scripts']);
-  gulp.watch('src/index.html', ['html', browserSync.reload]);
+  gulp.watch(['src/index.pug', 'src/templates/**/*.pug'], ['pug', browserSync.reload]);
+  gulp.watch('config.yml', ['read-config', 'pug', 'scripts', 'sass', browserSync.reload]);
 });
 
 // default task

@@ -1,0 +1,7 @@
+.main-container
+    .intro
+        h1= text.heading
+        !=text.body
+    ul.social
+        each icon in icons
+            li: a(href=icon.url): i(class="fa fa-" + icon.id, aria-hidden="true")
