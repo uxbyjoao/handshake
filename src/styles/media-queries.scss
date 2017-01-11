@@ -1,0 +1,24 @@
+// Query variables
+
+$mobile-small: 320px;
+$mobile-medium: 375px;
+$mobile-large: 425px;
+$tablet: 768px;
+$laptop: 1024px;
+
+// Query mixin
+
+@mixin device($media) {
+  @if $media == mobile-small {
+    @media screen and (max-width: $mobile-small) { @content; }
+  }
+  @else if $media == mobile {
+    @media screen and (min-width: $mobile-small + 1) and (max-width: $tablet - 1) { @content; }
+  }
+  @else if $media == tablet {
+    @media screen and (min-width: $tablet) and (max-width: $laptop - 1) { @content; }
+  }
+  @else if $media == laptop {
+    @media screen and (min-width: $laptop) { @content; }
+  }
+}

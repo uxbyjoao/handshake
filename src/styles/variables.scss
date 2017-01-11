@@ -1,0 +1,19 @@
+// Grid & Breakpoints
+
+$grid-base: 8px;
+$page-max-width: 900px;
+
+// Typography
+
+$heading-font-face: 'Merriweather', serif;
+$heading-font-size: $grid-base * 4;
+
+$body-font-face: 'Roboto', sans-serif;
+$body-font-size: $grid-base * 2;
+
+// Colors
+
+$brand-primary: #3299BB;
+$brand-black: #424242;
+$brand-silver: #BCBCBC;
+$brand-white: #E9E9E9;

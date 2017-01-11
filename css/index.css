@@ -1,0 +1,95 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  background-color: #E9E9E9;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather", serif;
+  color: #3299BB;
+  margin: 0; }
+  @media screen and (max-width: 320px) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 2em; } }
+  @media screen and (min-width: 321px) and (max-width: 767px) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 3em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 4em; } }
+  @media screen and (min-width: 1024px) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 4.5em; } }
+
+p {
+  font-family: "Roboto", sans-serif;
+  color: #424242; }
+  @media screen and (min-width: 321px) and (max-width: 767px) {
+    p {
+      font-size: 1.125em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    p {
+      font-size: 1.5em; } }
+  @media screen and (min-width: 1024px) {
+    p {
+      font-size: 1.5em; } }
+  p a {
+    color: #424242;
+    transition: color 0.1s ease-in-out; }
+    p a:hover {
+      color: #3299BB; }
+
+.main-container {
+  margin: 0 auto;
+  max-width: 900px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; }
+  @media screen and (max-width: 320px) {
+    .main-container {
+      padding: 2em; } }
+  @media screen and (min-width: 321px) and (max-width: 767px) {
+    .main-container {
+      padding: 2.5em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-container {
+      padding: 4.2em; } }
+  @media screen and (min-width: 1024px) {
+    .main-container {
+      padding: 2em; } }
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  color: #E9E9E9;
+  flex-grow: 1;
+  justify-content: center; }
+
+ul.social {
+  color: #BCBCBC;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  @media screen and (max-width: 320px) {
+    ul.social {
+      font-size: 1.25em; } }
+  @media screen and (min-width: 321px) and (max-width: 767px) {
+    ul.social {
+      font-size: 1.5em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    ul.social {
+      font-size: 2em; } }
+  @media screen and (min-width: 1024px) {
+    ul.social {
+      font-size: 2em; } }
+  ul.social a {
+    color: #BCBCBC;
+    transition: color 0.1s ease-in-out; }
+    ul.social a:hover {
+      color: #3299BB; }
