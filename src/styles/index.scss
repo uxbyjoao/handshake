@@ -1,12 +1,17 @@
-@import 'variables';
 @import 'media-queries';
+@import 'theme'; // theme will be dynamically injected in the build process
+
+$grid-base: 8px;
+$page-max-width: 900px;
+$heading-font-face: 'Merriweather', serif;
+$body-font-face: 'Roboto', sans-serif;
 
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
-  background-color: $brand-white;
+  background-color: $theme-background-color;
   margin: 0;
   padding: 0;
   font-size: $grid-base * 2; // 16px
@@ -14,7 +19,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-face;
-  color: $brand-primary;
+  color: $theme-heading-color;
   margin: 0;
   @include device(mobile-small) { font-size: 2em; }
   @include device(mobile) { font-size: 3em; }
@@ -24,14 +29,14 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   font-family: $body-font-face;
-  color: $brand-black;
+  color: $theme-body-color;
   @include device(mobile) { font-size: 1.125em; }
   @include device(tablet) { font-size: 1.5em; }
   @include device(laptop) { font-size: 1.5em; }
   a {
-    color: $brand-black;
+    color: $theme-link-color;
     transition: color 0.1s ease-in-out;
-    &:hover { color: $brand-primary; }
+    &:hover { color: $theme-link-hover-color; }
   }
 }
 
@@ -50,13 +55,11 @@ p {
 .intro {
   display: flex;
   flex-direction: column;
-  color: $brand-white;
   flex-grow: 1;
   justify-content: center;
 }
 
 ul.social {
-  color: $brand-silver;
   display: flex;
   justify-content: space-around;
   align-content: center;
@@ -69,8 +72,8 @@ ul.social {
   @include device(tablet) { font-size: 2em; }
   @include device(laptop) { font-size: 2em; }
   a {
-    color: $brand-silver;
+    color: $theme-icon-color;
     transition: color 0.1s ease-in-out;
-    &:hover { color: $brand-primary; }
+    &:hover { color: $theme-icon-hover-color; }
   }
 }

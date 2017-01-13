@@ -2,14 +2,14 @@
   box-sizing: border-box; }
 
 body {
-  background-color: #E9E9E9;
+  background-color: #fefefe;
   margin: 0;
   padding: 0;
   font-size: 16px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather", serif;
-  color: #3299BB;
+  color: #212121;
   margin: 0; }
   @media screen and (max-width: 320px) {
     h1, h2, h3, h4, h5, h6 {
@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   font-family: "Roboto", sans-serif;
-  color: #424242; }
+  color: #a0a0a0; }
   @media screen and (min-width: 321px) and (max-width: 767px) {
     p {
       font-size: 1.125em; } }
@@ -37,10 +37,10 @@ p {
     p {
       font-size: 1.5em; } }
   p a {
-    color: #424242;
+    color: #212121;
     transition: color 0.1s ease-in-out; }
     p a:hover {
-      color: #3299BB; }
+      color: #a0a0a0; }
 
 .main-container {
   margin: 0 auto;
@@ -64,12 +64,10 @@ p {
 .intro {
   display: flex;
   flex-direction: column;
-  color: #E9E9E9;
   flex-grow: 1;
   justify-content: center; }
 
 ul.social {
-  color: #BCBCBC;
   display: flex;
   justify-content: space-around;
   align-content: center;
@@ -90,7 +88,7 @@ ul.social {
     ul.social {
       font-size: 2em; } }
   ul.social a {
-    color: #BCBCBC;
+    color: #e4e4e4;
     transition: color 0.1s ease-in-out; }
     ul.social a:hover {
-      color: #3299BB; }
+      color: #a0a0a0; }

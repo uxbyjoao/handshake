@@ -32,13 +32,19 @@ gulp.task('pug', () => {
 });
 
 gulp.task('scripts', () => {
-  return gulp.src('src/scripts/app.js')
+  return gulp.src('src/scripts/scripts.js')
     .pipe(gulp.dest('./js'));
 });
 
 gulp.task('sass', ['read-config'], () => {
+
+  let theme;
+
+  if (!siteConfig.theme) theme = 'sky';
+  else theme = siteConfig.theme;
+
   return gulp.src('src/styles/index.scss')
-    .pipe(sass({ includePaths: ['node_modules'] }))
+    .pipe(sass({ includePaths: ['node_modules/font-awesome/scss', `src/styles/themes/${theme}`] })) // dynamically inject theme from siteConfig.theme
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream());
 });
@@ -50,7 +56,7 @@ gulp.task('serve', ['read-config', 'pug', 'scripts', 'sass'], () => {
     }
   });
 
-  gulp.watch('src/styles/*.scss', ['sass']);
+  gulp.watch('src/styles/**/*.scss', ['sass']);
   gulp.watch('src/js/app.js', ['scripts']);
   gulp.watch(['src/index.pug', 'src/templates/**/*.pug'], ['pug', browserSync.reload]);
   gulp.watch('config.yml', ['read-config', 'pug', 'scripts', 'sass', browserSync.reload]);
