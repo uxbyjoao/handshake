@@ -7,7 +7,7 @@ A simple, minimal, one-page "virtual greeting card" generator, built with GitHub
 1. Clone this repo.
 2. **Important:** Rename your repo on GitHub to match [GitHub Pages' rules](https://pages.github.com/), meaning the repo should be named `<yourusername>.github.io` if you want your URL to be something like `http://<yourusername>.github.io/`.
 3. Run `npm install` to install dependencies.
-4. Run `gulp serve` build your assets and run your local server with BrowserSync. Your site will be up on `http://localhost:3000`.
+4. Run `gulp serve` to build your assets and run your local server with BrowserSync. Your site will be up on `http://localhost:3000`.
 5. Change the `config.yml` file on the root folder to suit your needs. Change the text, try themes and add icons.
 6. When you're ready to publush, just do `git push origin master` to push your repo to GitHub, and voilá! Your site should be up and running.
 
