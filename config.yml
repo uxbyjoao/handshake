@@ -4,9 +4,6 @@
 # templating engine. You don't need to mess with any other files in the `src`
 # folder; just change this and we'll spit out a simple website for you.
 
-# This will go on the site's title and metadata. Provide your name,
-# job title and a short description. All fields are required.
-
 # theme: mono # Comment this out if you want to change the theme
 # distFolder: dist # Comment this out if you want a custom dist folder
 
@@ -24,28 +21,3 @@ templateLocals:
     - id: twitter
       url: https://twitter.com/joaobelve
       title: Tweet @joaobelve
-
-# Up next, you may list contact information so page viewers can get in touch.
-# These will be rendered as small icons visible on the bottom of the page.
-
-# Every item is required to have the following keys: `icon` and `url`.
-# Optionally, you can provide a `title` item which will be thrown in the `title`
-# attribute inside the `<a>` tag when rendering. The `icon` key should follow
-# FontAwesome's naming scheme for icons, excluding the `fa-` part (example:
-# for displaying a Medium icon, you would use a `fa-icon` class, so you can
-# just type `medium` and we throw in the `fa-` prefix for you). You can search
-# for icons' names at FontAwesome's website: http://fontawesome.io/icons/.
-
-# SITE BODY
-
-# This is where you type out what you want your site to display. You have two
-# fields you need to fill in: a heading (required), and some text body. You
-# can use HTML for links and markup formatting (example: `<strong>` or `<em>`),
-# but not images. Image tags will not be displayed and will be ignored.
-
-# OTHER CONFIGURATIONS
-
-# By default, we will build your site on the root folder of the project,
-# as this is a requirement for the page to function on GitHub Pages (for more
-# information on this, please visit https://pages.github.com/). You can specify
-# a different destination target folder here if you wish.

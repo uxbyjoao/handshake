@@ -39,16 +39,16 @@ If you're not customizing anything on Handshake, the `config.yml` file on the pr
 * `theme`: Specify a theme. If no value is specified, the build engine will default to `mono`.
 * `distFolder`: Specify a custom folder where your site will be built. Generally you don't want to change this if you're hosting your site on GitHub Pages (see the "Getting Started" section), but if you want to host it elsewhere, you can use this feature. If no value is specified, the site will be built at the project's root folder.
 * `templateLocals`: This is where you customize your title, text, meta description, add icons to the bottom bar, and everything else. There are several subfields here, so let's go through them one by one:
-  - `name`: Your name, or your product's name, or whatever. This is the first half in the <title> tag.
-  - `title`: A tagline, which goes to the second half in the <title> tag.
-  - `description`: Gets used in the <meta> tag inside the <head>.
+  - `name`: Your name, or your product's name, or whatever. This is the first half in the `<title>` tag.
+  - `title`: A tagline, which goes to the second half in the `<title>` tag.
+  - `description`: Gets used in the `<meta>` tag inside the `<head>`.
   - `text`: Your site's texts, which consist of:
     - `heading`: The big heading you see.
-    - `body`: The body below the heading. This supports Markdown, so if you need to add <em> or <a> tags, just use Markdown syntax and it'll parse it for you.
+    - `body`: The body below the heading. This supports Markdown, so if you need to add `<em>` or `<a>` tags, just use Markdown syntax and it'll parse it for you.
   - `icons`: This is a list of icons which gets rendered on the site's bottom bar. Every icon has these properties:
     - `id`: This must be a FontAwesome `fa-<icon>` icon class, only without the `fa-` prefix. Say you want a GitHub icon. This should read `github` (case sensitive!).
     - `url`: The destination URL for the icon's link.
-    - `title` (optional): You can optionally add this, as it gets thrown in the <a> tag as a `title` property.
+    - `title` (optional): You can optionally add this, as it gets thrown in the `<a>` tag as a `title` property.
 
 If you're customizing the templates in the `src/templates` folder, the `templateLocals` field gets parsed into a JavaScript object and is passed to Pug as template locals, so you can add custom fields to it if you want to use them down in the templates.
 
