@@ -4,4 +4,4 @@
         !=text.body
     ul.social
         each icon in icons
-            li: a(href=icon.url): i(class="fa fa-" + icon.id, aria-hidden="true")
+            li: a(href=icon.url target="_blank" title=icon.title): i(class="fa fa-" + icon.id, aria-hidden="true")
