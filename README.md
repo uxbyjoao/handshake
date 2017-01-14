@@ -9,7 +9,7 @@ A simple, minimal, one-page "virtual greeting card" generator, built with GitHub
 3. Run `npm install` to install dependencies.
 4. Run `gulp serve` to build your assets and run your local server with BrowserSync. Your site will be up on `http://localhost:3000`.
 5. Change the `config.yml` file on the root folder to suit your needs. Change the text, try themes and add icons.
-6. When you're ready to publush, just do `git push origin master` to push your repo to GitHub, and voilá! Your site should be up and running.
+6. When you're ready to publish, just push the repo to your `master` branch on GitHub, and voilá! Your site should be up and running.
 
 ## Project Structure
 
@@ -34,10 +34,10 @@ Handshake
 
 ## Config File
 
-If you're not customizing anything on Handshake, the `config.yml` file on the project's root folder is probably the only file you'll ever have to edit to get going. Here you'll specify everything about your site, from the text to the themes, and even a custom `dist` folder if you need one. By changing values here, the build process should take care of everything for you. These values are:
+If you're not customizing anything on Handshake, the `config.yml` file on the project's root folder is probably the only file you'll ever have to edit to get going. Here you'll specify everything about your site, from the text to the themes, and even a custom destination folder if you need one. By changing values here, the build process should take care of everything for you. These values are:
 
-* `theme`: Specify a theme. If no value is specified, the build engine will default to `mono`.
-* `distFolder`: Specify a custom folder where your site will be built. Generally you don't want to change this if you're hosting your site on GitHub Pages (see the "Getting Started" section), but if you want to host it elsewhere, you can use this feature. If no value is specified, the site will be built at the project's root folder.
+* `theme` (optional): Specify a theme. If no value is specified, the build engine will default to `mono`.
+* `distFolder` (optional): Specify a custom folder where your site will be built. Generally you don't want to change this if you're hosting your site on GitHub Pages (see the "Getting Started" section), but if you want to host it elsewhere, you can use this feature. If no value is specified, the site will be built at the project's root folder.
 * `templateLocals`: This is where you customize your title, text, meta description, add icons to the bottom bar, and everything else. There are several subfields here, so let's go through them one by one:
   - `name`: Your name, or your product's name, or whatever. This is the first half in the `<title>` tag.
   - `title`: A tagline, which goes to the second half in the `<title>` tag.
@@ -46,11 +46,11 @@ If you're not customizing anything on Handshake, the `config.yml` file on the pr
     - `heading`: The big heading you see.
     - `body`: The body below the heading. This supports Markdown, so if you need to add `<em>` or `<a>` tags, just use Markdown syntax and it'll parse it for you.
   - `icons`: This is a list of icons which gets rendered on the site's bottom bar. Every icon has these properties:
-    - `id`: This must be a FontAwesome `fa-<icon>` icon class, only without the `fa-` prefix. Say you want a GitHub icon. This should read `github` (case sensitive!).
+    - `id`: This must be a FontAwesome `fa-<icon>` icon class, only without the `fa-` prefix. Say you want a GitHub icon. This should read `github`. Note that this is case sensitive. You can use [any icon available in FontAwesome](http://fontawesome.io/icons/).
     - `url`: The destination URL for the icon's link.
     - `title` (optional): You can optionally add this, as it gets thrown in the `<a>` tag as a `title` property.
 
-If you're customizing the templates in the `src/templates` folder, the `templateLocals` field gets parsed into a JavaScript object and is passed to Pug as template locals, so you can add custom fields to it if you want to use them down in the templates.
+If you're customizing the templates in the `src/templates` folder, `templateLocals` gets parsed into a JavaScript object and is passed to Pug as template locals, so you can add custom fields to it if you want to use them down in the templates.
 
 ## Default Themes
 
@@ -61,11 +61,11 @@ We provide you with 6 default color themes: `cookie`, `fresh`, `ketchup`, `mono`
 If you want to create a custom color theme (please do, and submit a pull request with it! I'll be very happy), you can do so by following these steps:
 
 1. Duplicate one of the folders inside `src/styles/themes`; any one will be fine.
-2. Rename the folder to whatever you want your name to be called.
-3. Edit your `config.yml` file to point to your new theme. This should be the same as your new theme's folder name in Step 2.
-4. Edit the variables in `theme.scss` to your liking.
+2. Rename the folder to whatever you want your new theme to be called.
+3. Edit your `config.yml`'s `theme` property to point to your new theme. This should be the same as your new theme's folder name in Step 2.
+4. Edit the variables in your new theme's `theme.scss` file to your liking.
 
-**Important!** Every theme **MUST** have a `theme.scss` file inside its folder. Gulp dynamically injects a theme by looking for a file called `theme.scss` inside `src/styles/themes/<theme-name>`, where `<theme-name>` is whatever the `theme` property in your `config.yml` is.
+**Important!** Every theme **MUST** have a `theme.scss` file inside its folder. Gulp dynamically injects a theme when compiling your Sass by looking for a file called `theme.scss` inside `src/styles/themes/<theme-name>`, where `<theme-name>` is whatever the `theme` property in your `config.yml` is. If there is no `theme.scss` file, your build process will crash.
 
 ## Customizing a Theme
 
