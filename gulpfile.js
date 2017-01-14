@@ -1,6 +1,7 @@
 const gulp        = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass        = require('gulp-sass');
+const cleanCss    = require('gulp-clean-css');
 const yaml        = require('js-yaml');
 const pug         = require('gulp-pug');
 const markdown    = require('marked');
@@ -46,6 +47,7 @@ gulp.task('sass', ['read-config'], () => {
 
   return gulp.src('src/styles/index.scss')
     .pipe(sass({ includePaths: ['node_modules/font-awesome/scss', `src/styles/themes/${theme}`] })) // dynamically inject theme from siteConfig.theme
+    .pipe(cleanCss())
     .pipe(gulp.dest(`${siteConfig.distFolder}/css`))
     .pipe(browserSync.stream());
 });
