@@ -6,7 +6,7 @@ const pug         = require('gulp-pug');
 const markdown    = require('marked');
 const fs          = require('fs');
 
-var siteConfig;
+let siteConfig;
 
 // this will read a .yml file, parse it to JSON and attach it to `siteConfig`
 function readSiteConfig(filename) {
@@ -15,9 +15,10 @@ function readSiteConfig(filename) {
 
 gulp.task('read-config', () => {
   readSiteConfig('config.yml');
+  if (!siteConfig.distFolder) siteConfig.distFolder = './';
 });
 
-gulp.task('pug', () => {
+gulp.task('pug', ['read-config'], () => {
 
   // manually parse `siteConfig.templateLocals.text.body`, because Pug doesn't
   // support dynamic content when using filters... bummer
@@ -28,31 +29,31 @@ gulp.task('pug', () => {
    .pipe(pug({
      locals: siteConfig.templateLocals
    }))
-   .pipe(gulp.dest('./'));
+   .pipe(gulp.dest(siteConfig.distFolder));
 });
 
 gulp.task('scripts', () => {
   return gulp.src('src/scripts/scripts.js')
-    .pipe(gulp.dest('./js'));
+    .pipe(gulp.dest(`${siteConfig.distFolder}/js`));
 });
 
 gulp.task('sass', ['read-config'], () => {
 
   let theme;
 
-  if (!siteConfig.theme) theme = 'sky';
+  if (!siteConfig.theme) theme = 'mono';
   else theme = siteConfig.theme;
 
   return gulp.src('src/styles/index.scss')
     .pipe(sass({ includePaths: ['node_modules/font-awesome/scss', `src/styles/themes/${theme}`] })) // dynamically inject theme from siteConfig.theme
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest(`${siteConfig.distFolder}/css`))
     .pipe(browserSync.stream());
 });
 
 gulp.task('serve', ['read-config', 'pug', 'scripts', 'sass'], () => {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: siteConfig.distFolder
     }
   });
 

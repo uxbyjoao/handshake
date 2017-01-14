@@ -1,12 +1,14 @@
 # CONFIGURATION FILE
 
 # This file is used to pass information down to the build process and
-# templating engine.
-
-# PERSONAL & CONTACT INFORMATION
+# templating engine. You don't need to mess with any other files in the `src`
+# folder; just change this and we'll spit out a simple website for you.
 
 # This will go on the site's title and metadata. Provide your name,
 # job title and a short description. All fields are required.
+
+# theme: mono # Comment this out if you want to change the theme
+# distFolder: dist # Comment this out if you want a custom dist folder
 
 templateLocals:
   name: Handshake
@@ -43,11 +45,7 @@ templateLocals:
 
 # OTHER CONFIGURATIONS
 
-theme: mono
-
 # By default, we will build your site on the root folder of the project,
 # as this is a requirement for the page to function on GitHub Pages (for more
 # information on this, please visit https://pages.github.com/). You can specify
 # a different destination target folder here if you wish.
-
-distFolder: /
