@@ -77,6 +77,7 @@ You can access the default themes in your `src/styles/themes` folder. Every them
 * `gulp pug`: Compiles Pug templates.
 * `gulp sass`: Compiles and minifies Sass.
 * `gulp scripts`: Placeholder task for scripts build, if you need it. By default, Handshake has no JavaScript on the front-end.
+* `gulp build`: Builds your site.
 * `gulp serve`: See default task, `gulp`.
 
 ---
