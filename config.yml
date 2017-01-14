@@ -21,3 +21,9 @@ templateLocals:
     - id: twitter
       url: https://twitter.com/joaobelve
       title: Tweet @joaobelve
+    - id: medium
+      url: https://medium.com/@joaobelve
+      title: Follow @joaobelve on Medium
+    - id: instagram
+      url: https://www.instagram.com/joaobelve/
+      title: Follow @joaobelve on Instagram
