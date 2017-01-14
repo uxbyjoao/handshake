@@ -13,7 +13,7 @@ templateLocals:
   description: A minimalist one-page generator for freelancers.
   text:
     heading: Generate a one-page hub in minutes.
-    body: This is **Handshake**, crafted to be a quick solution for redirecting your clients/contacts to your other content & social media. It's super easy to set up, built with GitHub Pages in mind, features 5 color themes and icons from FontAwesome. Oh, and this body of text even supports Markdown. Created by [João "Belve" Gomes](http://www.twitter.com/joaobelve) for [his own personal website](http://joaobelve.github.io).
+    body: This is **Handshake**, crafted to be a quick solution for redirecting your clients/contacts to your other content & social media. It's super easy to set up, built with GitHub Pages in mind, features 5 color themes and icons from FontAwesome. Oh, and this body of text even supports Markdown.
   icons:
     - id: github
       url: https://www.github.com/joaobelve/handshake

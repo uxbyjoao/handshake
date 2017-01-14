@@ -65,5 +65,8 @@ gulp.task('serve', ['read-config', 'pug', 'scripts', 'sass'], () => {
   gulp.watch('config.yml', ['read-config', 'pug', 'scripts', 'sass', browserSync.reload]);
 });
 
+// only builds assets, no server
+gulp.task('build', ['read-config', 'pug', 'scripts', 'sass'])
+
 // default task
 gulp.task('default', ['serve']);
